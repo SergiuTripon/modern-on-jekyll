@@ -1,0 +1,112 @@
+/* panel variables */
+$panel-color: #FFFFFF;
+$panel-border-radius: 3px;
+
+/* panel-custom */
+.panel-custom {
+  /* display & box model */
+  border: none;
+  box-shadow: none;
+  border-radius: $panel-border-radius;
+  /* color */
+  @include background-color(0.5);
+
+  .panel-title {
+    font-size: $global-font-size;
+
+    h1, h2 {
+      /* display & box model */
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  }
+  .panel-body {
+    h1 {
+      /* text */
+      font-size: 30px;
+    }
+    h2 {
+      /* text */
+      font-size: 24px;
+    }
+    h1, h2 {
+      /* display & box model */
+      padding-bottom: 4px;
+      border-bottom: 1px solid $panel-color;
+    }
+    h3 {
+      /* text */
+      font-size: 20px;
+    }
+    h4 {
+      /* text */
+      font-size: 16px;
+    }
+    h5 {
+      /* text */
+      font-size: 14px;
+    }
+    h6 {
+      /* text */
+      font-size: 13px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      /* display & box model */
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    p {
+      /* display & box model */
+      margin-bottom: 16px;
+
+      &:last-child {
+        /* display & box model */
+        margin-bottom: 0;
+      }
+    }
+    hr {
+      /* display & box model */
+      border-width: 4px;
+      border-radius: 1px;
+      margin: 25px 0 20px;
+    }
+    blockquote {
+      /* display & box model */
+      margin: 15px 0;
+      padding: 5px 15px;
+
+      >:last-child {
+        /* display & box model */
+        margin-bottom: 0;
+      }
+    }
+    img {
+      /* display & box model */
+      margin: 0 auto;
+    }
+    .img-rounded {
+      /* display & box model */
+      border-radius: $panel-border-radius;
+    }
+    .embed {
+      /* display & box model */
+      margin-bottom: 20px;
+      &:last-child {
+        /* display & box model */
+        margin-bottom: 0;
+      }
+      .twitter-tweet {
+        /* display & box model */
+        margin: 20px auto 0 !important;
+      }
+    }
+  }
+  .panel-heading,
+  .panel-footer {
+    /* color */
+    color: $panel-color;
+    border-color: $panel-color;
+    @include background-color(0);
+  }
+}
+/* panel-custom */

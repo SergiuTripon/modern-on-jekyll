@@ -1,0 +1,50 @@
+---
+type: contact
+layout: page
+title: "Contact"
+description: ""
+---
+
+<ol class="breadcrumb">
+    <li><a href="{{ site.baseurl | prepend: site.url }}">Home</a></li>
+    <li>{{ page.title }}</li>
+</ol>
+
+<div class="panel panel-default panel-custom">
+    <div class="panel-body text-justify">
+        <div class="form-success hidden"></div>
+        <form class="form-custom form-horizontal" name="form-contact" id="form-contact" novalidate autocomplete="false">
+            <div class="form-fail hidden"></div>
+            <div class="input-feedback">
+                <i id="icon-fullname-success" class="fa fa-check"></i>
+                <i id="icon-fullname-fail" class="fa fa-times"></i>
+                <label for="fullname" class="sr-only">Full name*</label>
+                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full name*" autocomplete="false">
+                <p id="text-fullname-fail">Please enter your full name.</p>
+            </div>
+            <div class="input-feedback">
+                <i id="icon-email-success" class="fa fa-check"></i>
+                <i id="icon-email-fail" class="fa fa-times"></i>
+                <label for="email" class="sr-only">Email address*</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email address*" autocomplete="false">
+                <p id="text-no-email-fail">Please enter your email address.</p>
+                <p id="text-invalid-email-fail">The email address entered is invalid.</p>
+            </div>
+            <div class="input-feedback">
+                <i id="icon-phonenumber-success" class="fa fa-check"></i>
+                <i id="icon-phonenumber-fail" class="fa fa-times"></i>
+                <label for="phonenumber" class="sr-only">Phone number*</label>
+                <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="Phone number*" autocomplete="false">
+                <p id="text-phonenumber-fail">Please enter your phone number.</p>
+            </div>
+            <div class="input-feedback">
+                <i id="icon-message-success" class="fa fa-check"></i>
+                <i id="icon-message-fail" class="fa fa-times"></i>
+                <label for="message" class="sr-only">Message*</label>
+                <textarea class="form-control" rows="8" name="message" id="message" placeholder="Message*"></textarea>
+                <p id="text-message-fail">Please enter your message.</p>
+            </div>
+            <a id="contact-submit" class="btn btn-dark btn-lg">Send</a>
+        </form>
+    </div>
+</div>

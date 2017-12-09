@@ -1,0 +1,50 @@
+    <!-- meta -->
+    {% if site.author != empty %}
+    <meta name="author" content="{{ site.author }}">
+    {% endif %}
+
+    {% if site.social.twitter.locale != empty %}
+    <meta property="og:locale" content="{{ site.social.twitter.locale }}">
+    {% endif %}
+    {% if site.title != empty %}
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% endif %}
+    {% if site.social.facebook.id != empty %}
+    <meta property="article:author" content="https://www.facebook.com/{{ site.social.facebook.id }}">
+    {% endif %}
+    {% if site.social.facebook.id != empty %}
+    <meta name="twitter:creator:id" content="{{ site.social.twitter.id }}">
+    <meta name="twitter:site:id" content="{{ site.social.twitter.id }}">
+    {% endif %}
+
+    {% capture url %}{{ page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    <link rel="canonical" href="{{ url | strip }}">
+    <meta property="og:url" content="{{ url | strip }}">
+    <meta property="twitter:url" content="{{ url | strip }}">
+
+    {% capture title %}{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+    <title>{{ title }}</title>
+    <meta property="og:title" content="{{ title }}">
+    <meta property="twitter:title" content="{{ title }}">
+
+    {% capture description %}{% if page.description %}{{ page.description }}{% else %}{% if page.content != empty %}{{ page.content | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ page.title }}{% endif %}{% endif %}{% endcapture %}
+    {% if page.description %}<meta name="description" content="{{ description }}">{% endif %}
+    <meta property="og:description" content="{{ description }}">
+    <meta property="twitter:description" content="{{ description | strip }}">
+
+    <meta name="twitter:card" content="summary">
+    {% if page.layout == 'post' %}
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    {% if page.tags %}{% for tag in page.tags %}
+    <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}{% endif %}
+    {% else %}
+    <meta property="og:type" content="blog">
+    {% endif %}
+
+    {% if page.image %}
+    {% capture image_url %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    <meta property="og:image" content="{{ image_url }}">
+    <meta property="twitter:image" content="{{ image_url }}">
+    {% endif %}

@@ -1,0 +1,36 @@
+---
+type: page
+layout: default
+---
+
+{% if site.sidebar.all and site.posts.size > 0 %}
+<div class="container">
+{% else %}
+<div class="container single-col">
+{% endif %}
+    {% include body/navbar.html %}
+</div>
+
+{% if site.sidebar.all and site.posts.size > 0 %}
+<div class="container">
+    <div class="site-content col-lg-8 col-md-8 col-sm-12 col-xs-12">
+{% else %}
+<div class="container single-col">
+    <div class="site-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+{% endif %}
+        {{ content }}
+    </div>
+    {% if site.sidebar.all %}
+    <div class="site-sidebar col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        {% include body/sidebar.html %}
+    </div>
+    {% endif %}
+</div>
+
+{% if site.sidebar.all and site.posts.size > 0 %}
+<div class="container">
+{% else %}
+<div class="container single-col">
+{% endif %}
+    {% include body/footer.html %}
+</div>

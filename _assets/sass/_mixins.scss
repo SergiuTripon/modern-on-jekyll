@@ -1,0 +1,13 @@
+/* background color */
+@mixin background-color($opacity) {
+  /* color */
+  background-color: rgba(51, 51, 51, $opacity);
+}
+
+/* placeholder */
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}

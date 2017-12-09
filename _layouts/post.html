@@ -1,0 +1,19 @@
+---
+type: post
+layout: default
+---
+
+<div class="container single-col">
+    {% include body/navbar.html %}
+</div>
+
+<div class="container single-col">
+    <div class="site-post col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {% include post/main.html %}
+	{% include body/paginator.html %}
+    </div>
+</div>
+
+<div class="container single-col">
+    {% include body/footer.html %}
+</div>

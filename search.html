@@ -1,0 +1,31 @@
+---
+type: search
+layout: page
+title: "Search"
+description: ""
+---
+
+{% if site.sidebar.search %}
+<ol class="breadcrumb">
+    <li><a href="{{ site.baseurl | prepend: site.url }}">Home</a></li>
+    <li>{{ page.title }}</li>
+</ol>
+
+<div id="search-results"></div>
+
+<script>
+    window.store = {
+        {% for post in site.posts %}
+        "{{ post.url | slugify }}": {
+            "title":      "{{ post.title | xml_escape }}",
+            "author":     "{{ post.author | xml_escape }}",
+            "categories": "{{ post.categories | first | xml_escape }}",
+            "tags":       "{{ post.tags | first | xml_escape }}",
+            "content":    {{ post.content | strip_html | strip_newlines | jsonify }},
+            "url":        "{{ post.url | xml_escape }}"
+        }
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    }
+</script>
+{% endif %}

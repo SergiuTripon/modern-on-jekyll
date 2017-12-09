@@ -1,0 +1,47 @@
+{% if site.posts.size > 0 %}
+{% if site.sidebar.search %}
+<div class="panel panel-default panel-custom">
+    <div class="panel-heading">
+        <div class="panel-title text-center">Search</div>
+    </div>
+    <div class="panel-body text-center">
+        <form class="form-custom form-horizontal" name="form-search" id="form-search" action="{{ '/search/' | prepend: site.baseurl | prepend: site.url }}" method="get" novalidate autocomplete="false">
+            <div class="input-feedback">
+                <i id="icon-term-success" class="fa fa-check"></i>
+                <i id="icon-term-fail" class="fa fa-times"></i>
+                <input type="text" class="form-control" name="term" id="term" placeholder="enter a search term" autocomplete="false">
+                <p id="text-term-fail">Please enter a search term.</p>
+            </div>
+            <a id="search-submit" class="btn btn-dark btn-lg">Send</a>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% if site.sidebar.posts.latest %}
+<div class="panel panel-default panel-custom">
+    <div class="panel-heading">
+        <div class="panel-title text-center">Latest Post</div>
+    </div>
+    <div class="panel-body text-center">
+        {% for post in site.posts limit:1 %}
+        <div><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% if site.posts.size > 1 and site.sidebar.posts.recent %}
+<div class="panel panel-default panel-custom">
+    <div class="panel-heading">
+        <p class="panel-title text-center">Recent Posts</p>
+    </div>
+    <div class="panel-body text-center">
+    {% for post in site.posts offset:1 limit:5 %}
+        <p><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></p>
+    {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% if site.sidebar.cats_tags %}
+{% include body/cats_tags.html %}
+{% endif %}
+{% endif %}

@@ -1,0 +1,21 @@
+---
+type: home
+layout: page
+title: "Home"
+description: ""
+---
+
+<ol class="breadcrumb">
+    {% if site.posts.size > 0 %}
+    <li>{{ page.title }}</li>
+    {% else %}
+    <li>No posts yet</li>
+    {% endif %}
+</ol>
+
+{% if site.posts.size > 0 %}
+{% for post in paginator.posts %}
+{% include post/main.html %}
+{% endfor %}
+{% include body/paginator.html %}
+{% endif %}

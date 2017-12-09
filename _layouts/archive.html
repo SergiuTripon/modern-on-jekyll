@@ -1,0 +1,32 @@
+---
+type: archive
+layout: default
+---
+
+<div class="container single-col">
+    {% include body/navbar.html %}
+</div>
+
+<div class="container single-col">
+    <div class="site-archive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <ol class="breadcrumb">
+            {% if site.posts.size > 0 %}
+            {% if page.title == 'Archive' %}
+            <li><a href="{{ site.baseurl | prepend: site.url }}">Home</a></li>
+            <li>{{ page.title }}</li>
+            {% else %}
+            <li><a href="{{ site.baseurl | prepend: site.url }}">Home</a></li>
+            <li><a href="{{ site.archive.link | prepend: site.baseurl | prepend: site.url }}">Archive</a></li>
+            <li>{{ page.title }}</li>
+            {% endif %}
+            {% else %}
+            <li>No posts yet</li>
+            {% endif %}
+        </ol>
+        {% include body/archive.html %}
+    </div>
+</div>
+
+<div class="container single-col">
+    {% include body/footer.html %}
+</div>

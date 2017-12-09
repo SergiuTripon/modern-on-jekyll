@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head/main.html %}
+
+<body>
+
+{{ content }}
+
+{% include scripts.html %}
+
+{% if site.comments %}
+<script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+{% endif %}
+
+</body>
+
+</html>

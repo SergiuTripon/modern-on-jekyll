@@ -1,0 +1,186 @@
+/* global variables */
+$global-color: #FFFFFF;
+$global-font-size: 17px;
+$global-font-family: 'Lato', sans-serif;
+$global-border-radius: 3px;
+
+/* html, body */
+html,
+body {
+  /* display & box model */
+  width: 100%;
+  min-height: 100%;
+}
+body {
+  /* display & box model */
+  margin-top: 20px;
+  /* color */
+  color: $global-color;
+  /* text */
+  font-size: $global-font-size;
+  font-family: $global-font-family;
+}
+/* html, body */
+
+/* a, b */
+a,
+a:focus,
+a:hover {
+  /* color */
+  color: $global-color;
+  /* text */
+  text-decoration: none;
+}
+
+b, strong {
+  /* text */
+  font-weight: 600;
+}
+/* a, b */
+
+/* .container, .single-col */
+.container {
+  /* display & box model */
+  padding: 0;
+}
+@media (min-width: 992px), (min-width: 1151px) {
+  .single-col {
+    /* display & box model */
+    width: 800px;
+  }
+}
+/* .container, .single-col */
+
+/* .col-lg */
+.col-lg-12, .col-lg-8, .col-lg-4 {
+  /* display & box model */
+  padding: 0 10px 0 10px;
+}
+/* .col-lg */
+
+/* .list-inline */
+.list-inline {
+  &:last-child {
+    /* display & box model */
+    margin-bottom: 0;
+  }
+  li {
+    /* display & box model */
+    padding: 5px;
+  }
+}
+/* .list-inline */
+
+/* .btn, .btn-light, .btn-dark */
+.btn {
+  /* display & box model */
+  border-radius: 3px;
+
+  &:focus,
+  &:hover,
+  &:focus,
+  &:active,
+  .active {
+    /* display & box model */
+    box-shadow: none;
+    outline: none !important;
+    /* text */
+    text-decoration: none;
+  }
+}
+
+.btn-lg {
+  /* display & box model */
+  padding: 6px 16px;
+  /* text */
+  font-size: $global-font-size;
+}
+
+.btn-light,
+.btn-light:focus,
+.btn-light:hover {
+  /* color */
+  color: $global-color;
+  @include background-color(0.4);
+}
+
+.btn-dark,
+.btn-dark:focus,
+.btn-dark:hover {
+  /* color */
+  color: $global-color;
+  @include background-color(0.7);
+}
+/* .btn, .btn-light, .btn-dark */
+
+/* .label-light, .label-dark */
+.label-light {
+  /* color */
+  @include background-color(0.4);
+}
+.label-dark {
+  /* color */
+  @include background-color(0.7);
+}
+.label-light, .label-dark {
+  /* display & box model */
+  padding-top: .4em;
+  border-radius: $global-border-radius;
+  /* text */
+  font-size: 80%;
+  font-weight: 600;
+}
+/* .label-light, .label-dark */
+
+/* .breadcrumb */
+.breadcrumb {
+  /* display & box model */
+  padding: 10px 15px;
+  border-radius: $global-border-radius;
+  /* color */
+  @include background-color(0.7);
+
+  > li+li:before {
+    /* color */
+    color: $global-color;
+  }
+}
+/* .breadcrumb */
+
+/* .paginator */
+.paginator {
+  /* display & box model */
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: $global-border-radius;
+  /* color */
+  @include background-color(0.7);
+}
+/* .paginator */
+
+/* .tooltip */
+.tooltip.top .tooltip-arrow {
+  border-top-color: #333333;
+}
+.tooltip-inner {
+  background-color: #333333;
+  border-radius: $global-border-radius;
+}
+/* .tooltip */
+
+/* .footer */
+.footer {
+  /* display & box model */
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: $global-border-radius;
+  /* color */
+  color: $global-color;
+  @include background-color(0.7);
+
+  hr {
+    /* display & box model */
+    margin: 10px 0 10px 0;
+  }
+}
+/* .footer */

@@ -1,0 +1,168 @@
+# general
+title: Your Title
+author: Your Name
+description: >
+    Your description.
+timezone: Europe/London # your timezone
+
+# urls
+url: http://localhost:4000 # your url, e.g. http://your-domain.com
+baseurl: ""                # your base url, e.g. /blog
+
+# analytics
+google:
+  tracking: false       # boolean, true - turn google tracking on, false - turn google tracking off
+  tracking_id: ""       # your google tracking id
+  site_verification: "" # your google site verification
+bing:
+  tracking: false       # boolean, true - turn bing tracking on, false - turn bing tracking off
+  site_verification: "" # your bing site verification
+
+# comments
+disqus:
+  comments: false       # boolean, true - turn disqus comments on, false - turn disqus comments off
+  shortname: ""         # your disqus shortname
+
+# colors
+  # set linear gradient background color
+    # 1st in array - top gradient
+    # 2nd in array - bottom gradient
+  # set link color
+    # 3rd in array - link color
+colors:
+- '#FF5E3A, #FF2A68, #FFAE9B'
+- '#FF9500, #FF5E3A, #FFBF65'
+- '#FFDB4C, #FFCD02, #FFE064'
+- '#87FC70, #0BD318, #9CFF89'
+- '#52EDC7, #5AC8FB, #9BFFE6'
+- '#1AD6FD, #1D62F0, #9FEEFF'
+- '#C644FC, #5856D6, #E9B5FF'
+- '#EF4DB6, #C643FC, #FFB2E4'
+- '#5AD427, #A4E786, #B6FF95'
+- '#C86EDF, #E4B7F0, #F3C4FF'
+- '#FB2B69, #FF5B37, #FFABC4'
+- '#1D77EF, #81F3FD, #B0F9FF'
+- '#55EFCB, #5BCAFF, #9AFFE7'
+
+# sidebar
+sidebar:
+  all: true       # boolean, true - turn all sidebar elements on, false - turn all sidebar elements off
+  search: true    # boolean, true - turn sidebar search on, false - turn sidebar search off
+  posts:
+    latest: true  # boolean, true - turn sidebar latest post on, false - turn sidebar latest post off
+    recent: true  # boolean, true - turn sidebar recent posts on, false - turn sidebar recent posts off
+  cats_tags: true # boolean, true - turn sidebar categories and tags on, false - turn sidebar categories and tags off
+
+# about
+about:
+  page: true # boolean, true - turn about page on, false - turn about page off
+
+# archive
+archive:
+  page: true                      # boolean, true - turn archive page on, false - turn archive page off
+  link: /archive/                 # your preffered archive link, e.g. http://your-domain.com/archive/
+  cats_link: /archive/categories/ # your preffered categories link, e.g. http://your-domain.com/archive/categories/category
+  tags_link: /archive/tags/       # your preffered tags link, e.g. http://your-domain.com/archive/tags/tag
+
+# contact
+contact:
+  page: true # boolean, true - turn contact page on, false - turn contact page off
+
+# social
+social:
+  email:
+    address: ""  # your email address
+  linkedin:
+    share: true  # boolean, true - turn linkedin share button on, false - turn linkedin share button off
+    username: "" # your linkedin username
+  github:
+    username: "" # your linkedin username
+  behance:
+    username: "" # your linkedin username
+  stackexchange:
+    username: "" # your stackexchange username
+  stackoverflow:
+    username: "" # your stackoverflow username
+  paypal:
+    username: "" # your paypal username
+  facebook:
+    id: ""       # your facebook id, find it at: http://findmyfbid.com/
+    share: true  # boolean, true - turn facebook share button on, false - turn facebook share button off
+    username: "" # your facebook username
+  twitter:
+    id: ""       # your twitter id, find it at: http://mytwitterid.com/
+    share: true  # boolean, true - turn twitter share button on, false - turn twitter share button off
+    locale: ""   # twitter locale, e.g. en_GB
+    username: "" # your twitter username
+  google_plus:
+    share: true  # boolean, true - turn google plus share button on, false - turn google plus share button off
+    username: "" # your google plus username
+  instagram:
+    username: "" # your instagram username
+  vine:
+    username: "" # your vine username
+  tumblr:
+    username: "" # your tumblr username
+  skype:
+    username: "" # your skype username
+  soundcloud:
+    username: "" # your soundcloud username
+  spotify:
+    username: "" # your spotify username
+  youtube:
+    channel:  "" # your youtube channel
+  vimeo:
+    username: "" # your vimeo username
+
+# defaults
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+      author: Your Name
+      author-link: /about/
+      description: ""
+      comments: true
+      excerpt_separator: <!--more-->
+  -
+    scope:
+      path: ''
+      type: drafts
+    values:
+      layout: post
+      author: Your Name
+      author-link: /about/
+      description: ""
+      comments: false
+      excerpt_separator: <!--more-->
+
+# build
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  # syntax_highlighter_opts:
+    # css_class: 'highlight'
+    # span:
+      # line_numbers: false
+    # block:
+      # line_numbers: true
+      # start_line: 1
+permalink: /:year/:month/:day/:title/
+paginate: 5
+
+# exclude
+exclude:
+- node_modules
+- Gruntfile.js
+- package.json
+- README.md
+
+# gems
+gems:
+- jekyll-paginate
+- jekyll-gist

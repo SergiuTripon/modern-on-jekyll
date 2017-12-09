@@ -1,0 +1,63 @@
+/* navbar variables */
+$navbar-color:             #FFFFFF;
+$navbar-brand-font-family: 'Lato', sans-serif;
+$navbar-border-radius:     3px;
+
+/* .navbar-custom */
+.navbar-custom {
+  /* display & box model */
+  border: none;
+  border-radius: $navbar-border-radius;
+  /* color */
+  color: $navbar-color;
+  @include background-color(0.7);
+
+  .navbar-brand {
+    /* color */
+    color: $navbar-color;
+    /* text */
+    font-family: $navbar-brand-font-family;
+
+    &:focus,
+    &:hover {
+      /* color */
+      color: $navbar-color;
+    }
+  }
+  .navbar-nav > li > a {
+    /* color */
+    color: $navbar-color;
+
+    &:hover,
+    &:focus {
+      /* color */
+      color: $navbar-color;
+    }
+  }
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:focus,
+  .navbar-nav > .active > a:hover {
+    /* color */
+    color: $navbar-color;
+    @include background-color(0.5);
+  }
+  .navbar-toggle {
+    /* display & box model */
+    border: none;
+
+    &:hover,
+    &:focus {
+      /* color */
+      background-color: transparent;
+    }
+  }
+  .navbar-toggle .icon-bar {
+    /* color */
+    background-color: $navbar-color;
+  }
+  .navbar-collapse {
+    /* color */
+    border-color: $navbar-color;
+  }
+}
+/* .navbar-custom */

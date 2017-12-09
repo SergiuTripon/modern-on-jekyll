@@ -1,0 +1,81 @@
+{% if page.title == 'Archive' %}
+{% include body/cats_tags.html %}
+{% for post in site.posts %}
+{% capture day %}{{ post.date | date: '%d%m%Y' }}{% endcapture %}
+{% capture next_day %}{{ post.next.date | date: '%d%m%Y' }}{% endcapture %}
+{% if day != next_day %}
+<ol class="breadcrumb">
+    <li>{{ page.title }}</li>
+    <li>
+        <a href="{{ post.date | date: '%Y/%m/%d/' | prepend: site.archive.link | prepend: site.baseurl | prepend: site.url }}">
+            {{ post.date | date: '%A, %-d' }}
+        </a>
+        <a href="{{ post.date | date: '%Y/%m/' | prepend: site.archive.link | prepend: site.baseurl | prepend: site.url }}">
+            {{ post.date | date: '%B' }}
+        </a>
+        <a href="{{ post.date | date: '%Y/' | prepend: site.archive.link | prepend: site.baseurl | prepend: site.url }}">
+            {{ post.date | date: '%Y' }}
+        </a>
+    </li>
+</ol>
+{% endif %}
+{% include post/main.html %}
+{% endfor %}
+
+{% elsif page.day %}
+{% capture page_day %} {{ page.year | append: '-' | append: page.month | append: '-' | append: page.day}} {% endcapture %}
+{% for post in site.posts %}
+{% capture post_day %} {{ post.date | date: '%Y-%m-%d' }} {% endcapture %}
+{% if post_day == page_day %}
+{% include post/main.html %}
+{% endif %}
+{% endfor %}
+
+{% elsif page.month %}
+{% capture page_month %} {{ page.year | append: '-' | append: page.month }} {% endcapture %}
+{% for post in site.posts %}
+{% capture post_month %} {{ post.date | date: '%Y-%m' }} {% endcapture %}
+{% if post_month == page_month %}
+{% include post/main.html %}
+{% endif %}
+{% endfor %}
+
+{% elsif page.year %}
+{% for post in site.posts %}
+{% capture post_year %} {{ post.date | date: '%Y' }} {% endcapture %}
+{% capture page_year %} {{ page.year }} {% endcapture %}
+{% capture post_month %} {{ post.date | date: '%m%Y' }} {% endcapture %}
+{% capture next_post_month %} {{ post.next.date | date: '%m%Y' }} {% endcapture %}
+{% if post_year == page_year %}
+{% if post_month != next_post_month %}
+<ol class="breadcrumb">
+    <li>
+        <a href="{{ site.archive.link | prepend: site.baseurl | prepend: site.url }}">
+            Archive
+        </a>
+    </li>
+    <li>
+        <a href="{{ post.date | date: '%Y/%m/' | prepend: site.archive.link | prepend: site.baseurl | prepend: site.url }}">
+            {{ post.date | date: '%B' }}
+        </a>
+    </li>
+</ol>
+{% endif %}
+{% include post/main.html %}
+{% endif %}
+{% endfor %}
+
+{% elsif page.category %}
+{% for post in site.posts %}
+{% if post.categories contains page.category %}
+{% include post/main.html %}
+{% endif %}
+{% endfor %}
+
+{% elsif page.tag %}
+{% for post in site.posts %}
+{% if post.tags contains page.tag %}
+{% include post/main.html %}
+{% endif %}
+{% endfor %}
+{% endif %}

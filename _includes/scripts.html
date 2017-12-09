@@ -1,0 +1,49 @@
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    if(typeof jQuery === 'undefined'){
+        document.write(unescape("%3Cscript type=\"text/javascript\" src=\"{{ '/assets/lib/jquery-3.1.1.min.js' | prepend: site.baseurl }}\"%3E%3C/script%3E"));
+    }
+</script>
+
+<script>
+    $(function() {
+        // variable to hold colors
+        var colors = {{ site.colors | jsonify }}
+        // variable to hold color index
+        var color_index = Math.floor(Math.random() * colors.length);
+        // variable to hold colors split
+        var colors_split = colors[color_index].split(', ');
+        // variable to hold links
+        var links = document.getElementsByTagName("a");
+        // set color to all links
+        for (var i = 0; i < links.length; i++) {
+            links[i].style.color = colors_split[2];
+        }
+        // variable to hold body
+        var body = document.getElementsByTagName("body")[0];
+        // set background to body
+        body.style.background = "-webkit-linear-gradient(" + colors_split[0] + ", " + colors_split[1] + ")";
+        body.style.background = "-moz-linear-gradient("    + colors_split[0] + ", " + colors_split[1] + ")";
+        body.style.background = "-o-linear-gradient("      + colors_split[0] + ", " + colors_split[1] + ")";
+        body.style.background = "-ms-linear-gradient("     + colors_split[0] + ", " + colors_split[1] + ")";
+        body.style.background = "linear-gradient("         + colors_split[0] + ", " + colors_split[1] + ")";
+    });
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{% if site.sidebar.search %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/0.7.1/lunr.min.js"></script>
+<script src="{{ '/assets/js/search.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+{% endif %}
+
+{% if site.contact.page %}
+<script>
+    var formspree_email = '{{ site.social.email.address }}';
+</script>
+
+<script src="{{ '/assets/js/contact.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+{% endif %}
+
+<script src="{{ '/assets/js/main.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>

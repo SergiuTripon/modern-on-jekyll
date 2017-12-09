@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: assets/*
+Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml

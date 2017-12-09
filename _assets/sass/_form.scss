@@ -1,0 +1,109 @@
+/* form variables */
+$form-color: #FFFFFF;
+$form-border-radius: 3px;
+
+/* .form-custom, .input-feedback, .form-success, .form-fail */
+.form-custom {
+  .form-control {
+    /* positioning */
+    position: relative;
+    /* display & box model */
+    height: auto;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    /* color */
+    color: $form-color !important;
+    @include background-color(0.5);
+    /* text */
+    font-size: $global-font-size;
+    /* Other */
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:focus {
+      /* other */
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    @include placeholder {
+      /* color */
+      color: #F0F0F0;
+    }
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    /* color */
+    -webkit-text-fill-color: $form-color !important;
+    /* other */
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  }
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:active {
+    /* color */
+    -webkit-text-fill-color: $form-color !important;
+    /* other */
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  }
+  textarea {
+    /* other */
+    resize: none;
+  }
+}
+
+.input-feedback {
+  /* positioning */
+  position: relative;
+  /* display & box model */
+  margin-bottom: 20px;
+
+  i {
+    /* Positioning */
+    right: 0;
+    position: absolute;
+    /* display & box model */
+    z-index: 1;
+    display: none;
+    padding: 12px 12px;
+    /* color */
+    color: $form-color;
+    /* other */
+    pointer-events: none;
+  }
+  p {
+    /* display & box model */
+    display: none;
+    margin-bottom: 0;
+    padding-right: 10px;
+    /* color */
+    color: $form-color;
+    /* text */
+    text-align: right;
+  }
+}
+
+.form-success {
+  /* color */
+  color: $form-color;
+}
+
+.form-fail {
+  /* display & box model */
+  padding: 10px 0;
+  border-radius: 3px;
+  margin: 0 auto 30px;
+  border: 1px solid $form-color;
+  /* color */
+  color: $form-color;
+}
+/* .form-custom, .input-feedback, .form-success, .form-fail */

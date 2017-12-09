@@ -1,0 +1,37 @@
+{% if page.layout == 'post' %}
+{% if page.previous or page.next %}
+<div class="paginator clearfix">
+    {% if page.previous.url %}
+    <div class="pull-left">
+        <i class="fa fa-angle-left"></i>
+        <a href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">Previous</a>
+    </div>
+    {% endif %}
+    {% if page.next.url %}
+    <div class="text-right">
+        <a href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next</a>
+        <i class="fa fa-angle-right"></i>
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+{% else %}
+{% if paginator.total_pages > 1 %}
+<div class="paginator clearfix">
+    {% if paginator.previous_page %}
+    <div class="pull-left">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | prepend: site.url }}">
+            <i class="fa fa-angle-left"></i> Newer
+        </a>
+    </div>
+    {% endif %}
+    {% if paginator.next_page %}
+    <div class="text-right">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | prepend: site.url }}">
+            Older <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+{% endif %}

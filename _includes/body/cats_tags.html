@@ -1,0 +1,35 @@
+{% if site.categories != empty or site.tags != empty %}
+<div class="panel panel-default panel-custom">
+    <div class="panel-heading">
+    {% if page.title == 'Archive' %}
+        <div class="panel-title">List of all categories & tags</div>
+    {% else %}
+        <div class="panel-title text-center">Categories & Tags</div>
+    {% endif %}
+    </div>
+    <div class="panel-body text-center">
+        {% if site.categories != empty %}
+        <ul class="list-inline">
+            {% for cat in site.categories %}
+            <li>
+                <a class="label label-dark" href="{{ cat | first | downcase | slugify | prepend: site.archive.cats_link | prepend: site.baseurl | prepend: site.url }}">
+                    {{ cat | first }} ({{ cat | last | size }})
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if page.categories != empty %}
+        <ul class="list-inline">
+            {% for tag in site.tags %}
+            <li>
+                <a class="label label-light" href="{{ tag | first | downcase | slugify | prepend: site.archive.tags_link | prepend: site.baseurl | prepend: site.url }}">
+                    {{ tag | first }} ({{ tag | last | size }})
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
