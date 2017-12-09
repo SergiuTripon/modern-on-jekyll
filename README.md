@@ -1,6 +1,6 @@
 [![GitHub release](https://img.shields.io/github/release/SergiuTripon/modern-on-jekyll.svg)](https://github.com/SergiuTripon/modern-on-jekyll/releases)
-[![Travis build status](https://img.shields.io/travis/SergiuTripon/modern-on-jekyll/master.svg)](https://travis-ci.org/SergiuTripon/modern-on-jekyll/)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SergiuTripon/modern-on-jekyll/blob/master/LICENSE.md)
+[![Travis build status](https://img.shields.io/travis/SergiuTripon/modern-on-jekyll/gh-pages.svg)](https://travis-ci.org/SergiuTripon/modern-on-jekyll/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SergiuTripon/modern-on-jekyll/blob/gh-pages/LICENSE.md)
 
 ---
 

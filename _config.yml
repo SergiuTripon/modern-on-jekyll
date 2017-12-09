@@ -1,34 +1,29 @@
 # general
-title: Your Title
-author: Your Name
+title: Modern
+author: Sergiu Tripon
 description: >
-    Your description.
-timezone: Europe/London # your timezone
+    Modern, a Jekyll theme for modern people.
+timezone: Europe/London
 
 # urls
-url: http://localhost:4000 # your url, e.g. http://your-domain.com
-baseurl: ""                # your base url, e.g. /blog
+url: http://sergiu-tripon.com
+baseurl: /modern-on-jekyll
 
 # analytics
 google:
-  tracking: false       # boolean, true - turn google tracking on, false - turn google tracking off
-  tracking_id: ""       # your google tracking id
-  site_verification: "" # your google site verification
+  tracking: false
+  tracking_id: ""
+  site_verification:
 bing:
-  tracking: false       # boolean, true - turn bing tracking on, false - turn bing tracking off
-  site_verification: "" # your bing site verification
+  tracking: false
+  site_verification:
 
 # comments
 disqus:
-  comments: false       # boolean, true - turn disqus comments on, false - turn disqus comments off
-  shortname: ""         # your disqus shortname
+  comments: true
+  shortname: modern-on-jekyll
 
 # colors
-  # set linear gradient background color
-    # 1st in array - top gradient
-    # 2nd in array - bottom gradient
-  # set link color
-    # 3rd in array - link color
 colors:
 - '#FF5E3A, #FF2A68, #FFAE9B'
 - '#FF9500, #FF5E3A, #FFBF65'
@@ -46,73 +41,91 @@ colors:
 
 # sidebar
 sidebar:
-  all: true       # boolean, true - turn all sidebar elements on, false - turn all sidebar elements off
-  search: true    # boolean, true - turn sidebar search on, false - turn sidebar search off
+  all: true
+  search: true
   posts:
-    latest: true  # boolean, true - turn sidebar latest post on, false - turn sidebar latest post off
-    recent: true  # boolean, true - turn sidebar recent posts on, false - turn sidebar recent posts off
-  cats_tags: true # boolean, true - turn sidebar categories and tags on, false - turn sidebar categories and tags off
+    latest: true
+    recent: true
+  cats_tags: true
 
 # about
 about:
-  page: true # boolean, true - turn about page on, false - turn about page off
+  page: true
 
 # archive
 archive:
-  page: true                      # boolean, true - turn archive page on, false - turn archive page off
-  link: /archive/                 # your preffered archive link, e.g. http://your-domain.com/archive/
-  cats_link: /archive/categories/ # your preffered categories link, e.g. http://your-domain.com/archive/categories/category
-  tags_link: /archive/tags/       # your preffered tags link, e.g. http://your-domain.com/archive/tags/tag
+  page: true
+  link: /archive/
+  cats_link: /archive/categories/
+  tags_link: /archive/tags/
 
 # contact
 contact:
-  page: true # boolean, true - turn contact page on, false - turn contact page off
+  page: true
 
 # social
 social:
   email:
-    address: ""  # your email address
+    address: contact@sergiu-tripon.com
   linkedin:
-    share: true  # boolean, true - turn linkedin share button on, false - turn linkedin share button off
-    username: "" # your linkedin username
+    share: true
+    username: sergiutripon
   github:
-    username: "" # your linkedin username
+    username: SergiuTripon
   behance:
-    username: "" # your linkedin username
+    username: sergiutripon
   stackexchange:
-    username: "" # your stackexchange username
+    username: 5167860/sergiu-tripon
   stackoverflow:
-    username: "" # your stackoverflow username
+    username: 4137308/sergiu-tripon
   paypal:
-    username: "" # your paypal username
+    username: sergiutripon
   facebook:
-    id: ""       # your facebook id, find it at: http://findmyfbid.com/
-    share: true  # boolean, true - turn facebook share button on, false - turn facebook share button off
-    username: "" # your facebook username
+    id: 100000005070445
+    share: true
+    username: triponsergiu
   twitter:
-    id: ""       # your twitter id, find it at: http://mytwitterid.com/
-    share: true  # boolean, true - turn twitter share button on, false - turn twitter share button off
-    locale: ""   # twitter locale, e.g. en_GB
-    username: "" # your twitter username
+    id: 286066431
+    share: true
+    locale: en_GB
+    username: SergiuTripon
   google_plus:
-    share: true  # boolean, true - turn google plus share button on, false - turn google plus share button off
-    username: "" # your google plus username
+    share: true
+    username: 115463900916675278669
   instagram:
-    username: "" # your instagram username
+    username: sergiu_tripon
   vine:
-    username: "" # your vine username
+    username: 1234534944605372416
   tumblr:
-    username: "" # your tumblr username
+    username: sergiutripon
   skype:
-    username: "" # your skype username
+    username: sergiutripon
   soundcloud:
-    username: "" # your soundcloud username
+    username: sergiutripon
   spotify:
-    username: "" # your spotify username
+    username: sergiutripon
   youtube:
-    channel:  "" # your youtube channel
+    channel: UCSPiq_mmLpXaosA6oG3WNAQ
   vimeo:
-    username: "" # your vimeo username
+    username: sergiutripon
+
+# - http://uk.linkedin.com/in/sergiutripon
+# - https://github.com/SergiuTripon
+# - http://www.behance.net/SergiuTripon
+# - http://stackexchange.com/users/5167860/sergiu-tripon
+# - http://stackoverflow.com/users/4137308/sergiu-tripon
+# - https://www.paypal.me/sergiutripon
+# - http://www.facebook.com/triponsergiu
+# - https://twitter.com/SergiuTripon
+# - http://plus.google.com/115463900916675278669
+# - http://www.instagram.com/sergiu_tripon
+# - http://vine.co/u/1234534944605372416
+# - http://sergiutripon.tumblr.com
+# - skype:sergiutripon?add
+# - http://soundcloud.com/sergiutripon
+# - http://play.spotify.com/user/sergiutripon
+# - http://www.youtube.com/channel/UCSPiq_mmLpXaosA6oG3WNAQ
+# - http://vimeo.com/sergiutripon
 
 # defaults
 defaults:
@@ -122,7 +135,7 @@ defaults:
       type: posts
     values:
       layout: post
-      author: Your Name
+      author: Sergiu Tripon
       author-link: /about/
       description: ""
       comments: true
@@ -133,7 +146,7 @@ defaults:
       type: drafts
     values:
       layout: post
-      author: Your Name
+      author: Sergiu Tripon
       author-link: /about/
       description: ""
       comments: false

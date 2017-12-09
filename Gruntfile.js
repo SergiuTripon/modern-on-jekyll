@@ -138,7 +138,7 @@ module.exports = function(grunt) {
                 command: 'jekyll build --drafts'
             },
             jekyll: {
-                command: 'jekyll build --config _config.yml'
+                command: 'jekyll build --config _config.yml,_config-dev.yml'
             },
             archive: {
                 command: 'ruby archive/_archive.rb'
